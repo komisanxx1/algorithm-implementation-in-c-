@@ -1,0 +1,33 @@
+#include <iostream>
+
+int findSum(const int arr[], int size) {
+    // Check if the array is empty
+    if (size <= 0) {
+        std::cerr << "Error: Array is empty." << std::endl;
+        return 0; // Assuming 0 indicates an error or undefined value
+    }
+
+    // Initialize the sum to zero
+    int sum = 0;
+
+    // Iterate through the array to find the sum
+    for (int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+int main() {
+    // Example usage
+    int array[] = {12, 43, 7, 23, 56, 89, 14, 8};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    int sum = findSum(array, size);
+
+    if (sum != 0) {
+        std::cout << "The sum of elements in the array is: " << sum << std::endl;
+    }
+
+    return 0;
+}
